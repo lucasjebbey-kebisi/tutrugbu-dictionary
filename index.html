@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETINƐ - Tutrugbu Dictionary</title>
+<style>
+body{font-family:Arial; padding:20px; background:#f5f5f0; margin:0}
+h1{background:#2c5f2d; color:white; padding:15px; text-align:center; margin:0 -20px}
+#search{width:100%; padding:15px; font-size:18px; margin:20px 0; border:2px solid #2c5f2d; border-radius:8px}
+.word{background:white; padding:15px; margin:10px 0; border-radius:8px; border-left:5px solid #2c5f2d}
+.tutrugbu{font-size:20px; font-weight:bold; color:#2c5f2d}
+.english{color:#555}
+</style>
+</head>
+<body>
+<h1>ETINƐ - Tutrugbu Dictionary</h1>
+<input id="search" placeholder="Search Tutrugbu or English..." onkeyup="searchWord()">
+
+<div id="list">
+<div class="word"><div class="tutrugbu">Eti</div><div class="english">Father / Dad</div></div>
+<div class="word"><div class="tutrugbu">Oni</div><div class="english">Mother / Mom</div></div>
+<div class="word"><div class="tutrugbu">Eyi</div><div class="english">Water</div></div>
+<div class="word"><div class="tutrugbu">Etine</div><div class="english">Wisdom / Knowledge</div></div>
+<div class="word"><div class="tutrugbu">Bukɔ</div><div class="english">Book</div></div>
+<div class="word"><div class="tutrugbu">Osa</div><div class="english">God</div></div>
+</div>
+
+<script>
+function searchWord(){
+let input=document.getElementById('search').value.toLowerCase();
+let words=document.getElementsByClassName('word');
+for(let w of words){
+w.style.display=w.innerText.toLowerCase().includes(input)?'':'none';
+}
+}
+</script>
+</body>
+</html>
